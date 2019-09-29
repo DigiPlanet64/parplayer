@@ -8,11 +8,12 @@
 #include <QtGui/QWidget>
 #endif
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class FormMain; }
-QT_END_NAMESPACE
+#include "ui_FormMain.h"
 
-class FormMain : public QWidget
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+
+class FormMain : public QWidget, public Ui::FormMain
 {
     Q_OBJECT
 
@@ -20,7 +21,13 @@ public:
     FormMain(QWidget *parent = nullptr);
     ~FormMain();
 
+private slots:
+    void play();
+
 private:
-    Ui::FormMain *ui;
+    //Ui::FormMain *ui;
+
+    QMediaPlayer *player;
+    QMediaPlaylist *playlist;
 };
 #endif // FORMMAIN_H
