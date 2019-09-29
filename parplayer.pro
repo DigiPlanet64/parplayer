@@ -23,10 +23,10 @@ win32:RC_ICONS = Resources/main.ico
 
 
 CONFIG(debug, debug|release) {
-    DESTDIR = $$PWD/../bin/Debug
+    DESTDIR = $$PWD/bin/Debug
 }
 else{
-    DESTDIR = $$PWD/../bin/Release
+    DESTDIR = $$PWD/bin/Release
 }
 
 QT       += core gui multimedia

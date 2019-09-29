@@ -24,6 +24,9 @@ public:
 private slots:
     void play();
 
+    void durationChanged(qint64);
+    void positionChanged(qint64);
+
 private:
     //Ui::FormMain *ui;
 
