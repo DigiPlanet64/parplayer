@@ -1,8 +1,41 @@
-QT       += core gui
+#-------------------------------------------------
+#
+# Project ParPlayer
+# Creation Date : 2019-09-29T11:42:41
+#
+#-------------------------------------------------
 
+VERSION = 1.0.0.0
+QMAKE_TARGET_COMPANY = ""
+QMAKE_TARGET_PRODUCT = "ParPlayer"
+QMAKE_TARGET_DESCRIPTION = "ParPlayer Software"
+QMAKE_TARGET_COPYRIGHT = "ALL RIGHTS RESERVED"
+
+DEFINES += \
+APP_VERSION=\"\\\"$$VERSION\\\"\" \
+APP_COMPANY=\"\\\"$$QMAKE_TARGET_COMPANY\\\"\" \
+APP_PRODUCT=\"\\\"$$QMAKE_TARGET_PRODUCT\\\"\" \
+APP_DESCRIPTION=\"\\\"$$QMAKE_TARGET_DESCRIPTION\\\"\" \
+APP_COPYRIGHT=\"\\\"$$QMAKE_TARGET_COPYRIGHT\\\"\" \
+APP_NAME=\\\"$$TARGET\\\"
+
+win32:RC_ICONS = Resources/main.ico
+
+
+CONFIG(debug, debug|release) {
+    DESTDIR = $$PWD/../bin/Debug
+}
+else{
+    DESTDIR = $$PWD/../bin/Release
+}
+
+QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
+
+TARGET = parplayer
+TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
